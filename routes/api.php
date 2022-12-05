@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'member'], function () {
+    Route::get('/', [MemberController::class, 'getTree']);
+    Route::get('/{username}/bonus', [MemberController::class, 'bonus']);
+    Route::post('/register', [MemberController::class, 'create']);
+    Route::post('/move', [MemberController::class, 'move']);
 });
