@@ -26,3 +26,6 @@
 
 ### NOTE
 Karena ini aplikasi sederhana, saya simpan semua logic di controller, jadi tidak ada service atau repository
+
+### API Documentation
+https://documenter.getpostman.com/view/15745420/2s8YzMYRDZ
